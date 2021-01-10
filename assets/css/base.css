@@ -1,0 +1,84 @@
+/* Custom font */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+:root {
+  --primary-color: #ee4d2d;
+  --white-color: #ffff;
+  --black-color: #000;
+  --text-color: #333;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Noto Sans", sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.grid__full-width {
+  width: 100%;
+}
+
+.grid__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeGrow {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
