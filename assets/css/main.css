@@ -43,6 +43,7 @@
 .header__navbar-icon-link:hover {
   color: rgb(255, 255, 255, 0.7);
   cursor: pointer;
+  z-index: 1;
 }
 
 .header__navbar-item--strong {
