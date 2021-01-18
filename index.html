@@ -109,7 +109,24 @@
           </svg>
           </div>
           <div class="header__search">
-            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+            <div class="header__search-input-warp">
+              <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+              <!-- search history -->
+              <div class="header__search-history">
+                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                <ul class="header__search-history-list">
+                  <li class="header__search-history-item">
+                    <a href="">Kem</a>
+                  </li>
+                  <li class="header__search-history-item">
+                    <a href="">Gel</a>
+                  </li>
+                  <li class="header__search-history-item">
+                    <a href="">Giày</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div class="header__search-selection">
               <span class="header__search-selection-label">Trong shop 
                 <i class=" header__search-selection-icon fas fa-chevron-down"></i>
@@ -127,8 +144,18 @@
               <i class="header__search-btn-icon fas fa-search"></i>
             </button>
           </div>
+          <!-- Cart -->
           <div class="header__cart">
-            <i class="header__cart-icon fas fa-shopping-cart"></i>
+            <div class="header__cart-wrap">
+              <i class="header__cart-icon fas fa-shopping-cart"></i>
+              <div class="header__cart-list header__cart-list--no-cart">
+                <img src="./assets/img/no-cart.png" alt="No cart" class="header__car-no-cart-img">
+                <span class="header__cart-list-no-cart-msg">
+                  Chưa có sản phẩm
+                </span>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
