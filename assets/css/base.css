@@ -33,7 +33,7 @@
   --black-color: #000;
   --text-color: #333;
   --border-color: #dbdbdb;
-
+  --star-gold-color: #ffce3e;
   --header--height: 120px;
   --nav-height: 34px;
   --header-width-search-height: calc(var(--header--height) - var(--nav-height));
@@ -52,6 +52,7 @@ html {
   height: 100%;
 }
 
+/* Responsive */
 .grid {
   width: 1200px;
   max-width: 100%;
@@ -65,8 +66,27 @@ html {
 .grid__row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
+/* Test */
+.grid__column-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 16.6667%;
+}
+
+.grid__column-2-4 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 20%;
+}
+.grid__column-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 83.3334%;
+}
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -135,9 +155,10 @@ html {
   outline: none;
   cursor: pointer;
   color: var(--text-color);
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--white-color);
 }
 
 .btn.btn--normal:hover {
@@ -155,4 +176,52 @@ html {
 .btn.btn--disable {
   cursor: default;
   background-color: #999;
+}
+
+/* Selection */
+.select-input {
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.select-input__label {
+  font-size: 1.4rem;
+}
+.select-input__icon {
+  font-size: 1.4rem;
+  color: #4a4a4a;
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+}
+.select-input__list {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  border-radius: 2px;
+  list-style: none;
+  padding: 8px 16px;
+  display: none;
+}
+
+.select-input:hover .select-input__list {
+  display: block;
+}
+.select-input__link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  display: block;
+  padding: 4px 0px;
+}
+.select-input__link:hover {
+  color: var(--primary-color);
 }
