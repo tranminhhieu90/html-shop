@@ -37,7 +37,7 @@
 .header__navbar-user-menu {
   position: absolute;
   padding-left: 0px;
-  top: calc(100% + 4px);
+  top: calc(100% + 6px);
   right: 0;
   width: 160px;
   background-color: var(--white-color);
@@ -73,6 +73,9 @@
   font-size: 1.4rem;
   padding: 8px 16px;
   display: block;
+}
+.header__navbar-user-item:last-child {
+  border-top: 1px solid rgb(0, 0, 0, 0.1);
 }
 .header__navbar-user-item a:first-child {
   border-top-left-radius: 2px;
@@ -156,6 +159,8 @@
   border-radius: 2px;
   display: none;
   animation: fadeIn ease-in 0.25s;
+  z-index: 1;
+  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.1);
 }
 
 .header__qr::before {
@@ -469,6 +474,7 @@
   display: none;
   animation: fadeIn ease-in 0.25s;
   cursor: default;
+  z-index: 1;
 }
 
 .header__cart-notice {
@@ -496,6 +502,8 @@
 .header__cart-list-item {
   padding-left: 0;
   list-style: none;
+  height: 56vh;
+  overflow-y: auto;
 }
 .header__cart-item {
   display: flex;
@@ -526,6 +534,8 @@
 .header__cart-item-name {
   font-size: 1.4rem;
   font-weight: 500;
+  line-height: 2rem;
+  max-height: 4rem;
   color: var(--text-color);
   margin: 0;
   white-space: nowrap;
@@ -533,6 +543,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .header__cart-item-price {
   font-size: 1.4rem;
@@ -668,6 +681,7 @@
   padding-left: 0;
   border-radius: 2px;
   display: none;
+  z-index: 1;
 }
 
 .header__search-option::before {
@@ -725,6 +739,7 @@
   box-shadow: 0 1px 5px rgb(201, 199, 199);
   overflow: hidden;
   display: none;
+  z-index: 1;
 }
 .header__search-history-heading {
   margin: 6px 12px;
@@ -773,6 +788,7 @@
   align-items: center;
   margin-top: 0;
   border-bottom: 1px solid rgb(0, 0, 0, 0.05);
+  text-transform: uppercase;
 }
 
 .category_heading-icon {
@@ -786,6 +802,21 @@
   margin-left: 9px;
 }
 
+.category-item {
+  position: relative;
+}
+
+.category-item:first-child::before {
+  display: none;
+}
+.category-item::before {
+  content: "";
+  border-top: 1px solid #e1e1e1;
+  position: absolute;
+  left: 16px;
+  top: 0;
+  right: 16px;
+}
 .category-item--active .category-item__link {
   color: var(--primary-color);
 }
@@ -805,7 +836,7 @@
   text-decoration: none;
   color: var(--text-color);
   font-size: 1.5rem;
-  padding: 4px 16px;
+  padding: 10px 16px;
   display: block;
   transition: right linear 0.1s;
 }
@@ -875,10 +906,24 @@
 }
 
 /* product item */
+.home-product {
+  margin-bottom: 10px;
+}
 .home-product-item {
+  display: block;
+  text-decoration: none;
   background-color: var(--white-color);
   margin-top: 10px;
   position: relative;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.1);
+  transition: transform linear 0.1s;
+  will-change: transform;
+}
+.home-product-item:hover {
+  box-shadow: 0 0.1rem 2rem 0 rgba(197, 143, 143, 0.05);
+  transform: translateY(-1px);
 }
 .home-product-item__img {
   padding-top: 100%;
@@ -1020,4 +1065,70 @@ i.home-product-item__like-icon-fill {
   color: var(--white-color);
   font-weight: 600;
   font-size: 1.3rem;
+}
+.home-product__pagination {
+  margin: 48px 0px 32px 0px;
+}
+
+/* footer */
+.footer {
+  border-top: 4px solid var(--primary-color);
+  padding-top: 12px;
+}
+.footer__heading {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+.footer-list {
+  list-style: none;
+  padding-left: 0px;
+}
+.footer-item__link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 4px 0px;
+  display: block;
+  display: flex;
+  align-items: center;
+}
+.footer-item__link:hover {
+  color: var(--primary-color);
+}
+.footer-item__icon {
+  font-size: 1.7rem;
+  margin-right: 8px;
+}
+.footer__download {
+  display: flex;
+}
+.footer__download-qr {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--border-color);
+  margin-right: 16px;
+}
+.footer__download-apps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer__download-app-img {
+  height: 20px;
+  line-height: 20px;
+}
+.footer__download-apps-link {
+  text-decoration: none;
+  color: transparent;
+}
+.footer__bottom {
+  background-color: #f5f5f5;
+  padding: 24px 0px;
+  margin-top: 24px;
+}
+.footer-certificated {
+  margin: 0;
+  font-size: 1.4rem;
+  text-align: center;
 }
